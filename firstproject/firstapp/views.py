@@ -1,15 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import AiClass
 
 # Create your views here.
 
-students=['jisu','minso','suho']
-
 def home(request):
-    chat='hello'
-    name='jisu'
+    class_object=AiClass.objects.all()
 
-    return render(request,'home.html',{'user_chat':chat,'user_name':name})
+    return render(request,'home.html',{'class_object':class_object})
 
 def result(request):
     name=request.POST['username']

@@ -7,9 +7,6 @@
 </head>
 <body>
     <h1>home</h1>
-    {{user_chat}}
-    my name is {{user_name}} !!
-
     <form action="{%url 'result'%}" method='POST'>
         {% csrf_token %}
         <input name="username" placeholder="이름"/>
@@ -17,5 +14,11 @@
         <br/>
         <button type="submit">check</button>
     </form>
+
+    <h1>Class</h1>
+    {% for class in class_object%}
+        {{class.class_num}}
+        {{class.lecturer}}
+    {% endfor %}
 </body>
 </html>
