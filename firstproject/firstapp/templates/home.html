@@ -17,8 +17,10 @@
 
     <h1>Class</h1>
     {% for class in class_object%}
-        {{class.class_num}}
-        {{class.lecturer}}
+        <a href='class_student.html'>
+            {{class.class_num}}
+            {{class.lecturer}}
+        </a><br>
     {% endfor %}
 </body>
 </html>

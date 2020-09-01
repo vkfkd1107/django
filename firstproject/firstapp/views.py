@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import AiClass
 
 # Create your views here.
+students=['jisu','suho','minsu']
 
 def home(request):
     class_object=AiClass.objects.all()
