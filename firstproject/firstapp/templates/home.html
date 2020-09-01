@@ -7,20 +7,13 @@
 </head>
 <body>
     <h1>home</h1>
-    <form action="{%url 'result'%}" method='POST'>
-        {% csrf_token %}
-        <input name="username" placeholder="이름"/>
-        <br/>
-        <br/>
-        <button type="submit">check</button>
-    </form>
-
-    <h1>Class</h1>
-    {% for class in class_object%}
-        <a href='class_student.html'>
-            {{class.class_num}}
-            {{class.lecturer}}
-        </a><br>
+    {% for class in classes %}
+        <div>
+            <a href='#'>
+                {{class.class_num}}
+                {{class.lecturer}}
+            </a>
+        </div>
     {% endfor %}
 </body>
 </html>

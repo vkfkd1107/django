@@ -6,16 +6,10 @@ from .models import AiClass
 students=['jisu','suho','minsu']
 
 def home(request):
-    class_object=AiClass.objects.all()
+    classes=AiClass.objects.all()
 
-    return render(request,'home.html',{'class_object':class_object})
+    context={
+        'classes':classes
+    }
 
-def result(request):
-    name=request.POST['username']
-
-    if name in students:
-        is_exist=True
-    else:
-        is_exist=False
-    
-    return render(request,'result.html',{'user_name':name,'is_exist':is_exist})
+    return render(request,'home.html',context)
